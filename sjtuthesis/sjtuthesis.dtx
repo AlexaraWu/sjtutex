@@ -1,0 +1,1370 @@
+% \iffalse meta-comment
+% !TeX program  = XeLaTeX
+% !TeX encoding = UTF-8
+%
+% Copyright (C) 2018 by Alxara Wu <alexarawu@gmail.com>
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License, either
+% version 1.3c of this license or (at your option) any later
+% version. The latest version of this license is in:
+%
+%   http://www.latex-project.org/lppl.txt
+%
+% and version 1.3 or later is part of all distributions of
+% LaTeX version 2005/12/01 or later.
+%
+% This work has the LPPL maintenance status `maintained'.
+%
+% The Current Maintainer of this work is Alxara Wu.
+%
+% This work consists of the files sjtuthesis.dtx,
+%           and the derived files sjtuthesis.ins,
+%                                 sjtuthesis.cls,
+%                                 sjtuthesis.def,
+%                                 sjtuthesis-zh.def,
+%                                 sjtuthesis-en.def,
+%                                 sjtubadge.pdf,
+%                                 sjtubanner.pdf,
+%                                 sjtulogo.pdf,
+%                             and README.md.
+%
+%<*internal>
+\iffalse
+%</internal>
+%
+%<*readme>
+The `sjtuthesis` Class
+%</readme>
+%
+%<*internal>
+\fi
+\begingroup
+  \def\NameOfLaTeXe{LaTeX2e}
+\expandafter\endgroup\ifx\NameOfLaTeXe\fmtname\else
+\csname fi\endcsname
+%</internal>
+%
+%<*install>
+\input l3docstrip.tex
+\keepsilent
+\askforoverwritefalse
+
+\preamble
+
+    Copyright (C) \the\year by Alxara Wu <alexarawu@gmail.com>
+
+    This work may be distributed and/or modified under the
+    conditions of the LaTeX Project Public License, either
+    version 1.3c of this license or (at your option) any later
+    version. The latest version of this license is in:
+
+      http://www.latex-project.org/lppl.txt
+
+    and version 1.3 or later is part of all distributions of
+    LaTeX version 2005/12/01 or later.
+
+    This work has the LPPL maintenance status `maintained'.
+
+    The Current Maintainer of this work is Alxara Wu.
+
+    This work consists of the files sjtuthesis.dtx,
+              and the derived files sjtuthesis.ins,
+                                    sjtuthesis.cls,
+                                    sjtuthesis.def,
+                                    sjtuthesis-zh.def,
+                                    sjtuthesis-en.def,
+                                    sjtubadge.pdf,
+                                    sjtubanner.pdf,
+                                    sjtulogo.pdf,
+                                and README.md.
+
+\endpreamble
+
+\generate{
+  \usedir{tex/latex/sjtuthesis}
+    \file{\jobname.cls}        {\from{\jobname.dtx}{class}}
+    \file{\jobname.def}        {\from{\jobname.dtx}{def}}
+    \file{\jobname-zh.def}     {\from{\jobname.dtx}{def-zh}}
+    \file{\jobname-en.def}     {\from{\jobname.dtx}{def-en}}
+%</install>
+%<*internal>
+  \usedir{source/latex/sjtuthesis}
+    \file{\jobname.ins}        {\from{\jobname.dtx}{install}}
+%</internal>
+%<*install>
+  \usedir{doc/latex/sjtuthesis}
+  \nopreamble\nopostamble
+    \file{README.md}           {\from{\jobname.dtx}{readme}}
+}
+
+\obeyspaces
+\Msg{*************************************************************}
+\Msg{*                                                           *}
+\Msg{* To finish the installation you have to move the following *}
+\Msg{* files into a directory searched by TeX:                   *}
+\Msg{*                                                           *}
+\Msg{* The recommended directory is TDS:tex/latex/sjtuthesis     *}
+\Msg{*                                                           *}
+\Msg{*     sjtuthesis.cls                                        *}
+\Msg{*     sjtuthesis.def                                        *}
+\Msg{*     sjtuthesis-zh.def                                     *}
+\Msg{*     sjtuthesis-en.def                                     *}
+\Msg{*                                                           *}
+\Msg{* To produce the documentation, run the file sjtuthesis.dtx *}
+\Msg{* through XeLaTeX.                                          *}
+\Msg{*                                                           *}
+\Msg{* Happy TeXing!                                             *}
+\Msg{*                                                           *}
+\Msg{*************************************************************}
+
+\endbatchfile
+%</install>
+%
+%<*internal>
+\fi
+%</internal>
+%
+%<class>\NeedsTeXFormat{LaTeX2e}
+%<class>\RequirePackage{expl3}
+%<*!driver>
+%<!readme>\GetIdInfo $Id: sjtuthesis.cls 2.0.0rc 2018-01-31 11:44:16Z Alexara Wu <alexarawu@gmail.com> $
+%<class>  {Shanghai Jiao Tong University Thesis Template}
+%<class>\ProvidesExplPackage{\ExplFileName}
+%<def>  {Definition file for sjtuthesis}
+%<def>\ProvidesExplFile{\ExplFileName.def}
+%<def-zh>  {Definition file (Chinese) for sjtuthesis}
+%<def-zh>\ProvidesExplFile{\ExplFileName-zh.def}
+%<def-en>  {Definition file (English) for sjtuthesis}
+%<def-en>\ProvidesExplFile{\ExplFileName-en.def}
+%<!readme>  {\ExplFileDate}{\ExplFileVersion}{\ExplFileDescription}
+%</!driver>
+%<*driver>
+\documentclass[10pt]{l3doc}
+\usepackage{hypdoc}
+  \hypersetup{
+    bookmarksopen=true,
+    bookmarksnumbered=true,
+    CJKbookmarks=true,
+    unicode=true,
+    allcolors=blue,
+    pdftitle  = {sjtuthesis: 上海交通大学论文模板},
+    pdfauthor = {Alexara Wu}
+  }
+  \EnableCrossrefs
+  \CodelineIndex
+  \RecordChanges
+\usepackage[paper=letterpaper,hmargin={2.5in,.5in},vmargin=1.5in]{geometry}
+\usepackage[UTF8,fontset=fandol,scheme=chinese]{ctex}
+\setmainfont{TeX Gyre Pagella}
+\setmonofont{Sarasa Mono SC}
+\begin{document}
+  \DocInput{\jobname.dtx}
+\end{document}
+%</driver>
+% \fi
+%
+% \GetFileInfo{\jobname.dtx}
+%
+% \section{介绍}
+% SJTUThesis是用于排版上海交通大学本科和研究生学位论文的 LaTeX 模板。
+%
+%    \begin{macrocode}
+%<@@=sjtu>
+%<*class>
+%    \end{macrocode}
+%
+% 目前 sjtuthesis 仅支持 XeTeX 。
+%    \begin{macrocode}
+\msg_new:nnnn { sjtuthesis } { engine-not-supported }
+  { Engine~ `#1'~ is~ not~ yet~ supported! }
+  { You~ can~ switch~ to~ `xelatex'~ or~ `lualatex'. }
+\sys_if_engine_xetex:F
+  {
+    \sys_if_engine_luatex:F
+      {
+        \msg_critical:nnx { sjtuthesis } { engine-not-supported }
+          { \c_sys_engine_str }
+      }
+  }
+%    \end{macrocode}
+%
+% 检查 \LaTeX3 编程环境。
+%    \begin{macrocode}
+\RequirePackage { xparse, l3keys2e }
+\msg_new:nnnn { sjtuthesis } { l3-too-old }
+  { Package~ `#1'~ is~ too~ old. }
+  {
+    Please~ update~ an~ up-to-date~ version~ of~ the~ bundles \\
+    `l3kernel'~ and~ `l3packages'~ using~ your~ TeX~ package \\
+    manager~ or~ from~ CTAN.
+  }
+\clist_map_inline:nn { expl3, xparse, l3keys2e }
+  {
+    \@ifpackagelater {#1} { 2017/12/16 }
+      { } { \msg_error:nnn { sjtuthesis } { l3-too-old } {#1} }
+  }
+%    \end{macrocode}
+%
+% \subsubsection{内部变量声明}
+%
+% 临时变量。
+%    \begin{macrocode}
+\box_new:N       \l_@@_tmpa_box
+\dim_new:N       \l_@@_tmpa_dim
+\dim_new:N       \l_@@_tmpb_dim
+\tl_new:N        \l_@@_tmpa_tl
+\tl_new:N        \l_@@_tmpb_tl
+\clist_new:N     \l_@@_tmpa_clist
+\clist_new:N     \l_@@_tmpb_clist
+%    \end{macrocode}
+%
+% 学位选项。
+%    \begin{macrocode}
+\int_new:N       \g_@@_degree_flag
+\tl_new:N        \g_@@_degree_tl
+\tl_new:N        \g_@@_degree_en_tl
+%    \end{macrocode}
+%
+% 字号设置。
+%    \begin{macrocode}
+\int_new:N       \g_@@_font_size_flag
+\tl_new:N        \g_@@_font_size_tl
+%    \end{macrocode}
+%
+% 双页模式（默认打开）。
+%    \begin{macrocode}
+\bool_new:N      \g_@@_twoside_bool
+\bool_set_true:N \g_@@_twoside_bool
+%    \end{macrocode}
+%
+% 盲审模式。
+%    \begin{macrocode}
+\bool_new:N      \g_@@_review_bool
+%    \end{macrocode}
+%
+% 英文模版。
+%    \begin{macrocode}
+\bool_new:N      \g_@@_english_bool
+%    \end{macrocode}
+%
+% 分别保存传入 ctexbook 文档类和
+% hyperref 宏包的选项列表。
+%    \begin{macrocode}
+\clist_new:N     \g_@@_to_hyperref_clist
+\clist_new:N     \g_@@_to_ctexbook_clist
+%    \end{macrocode}
+%
+% 用来定义脚注样式、标点、默认名称的辅助函数。
+%    \begin{macrocode}
+\cs_new_protected:Npn \_@@_def_name:nn #1#2
+  { \tl_const:cn { c_@@_def_name_ #1 _tl } {#2} }
+%    \end{macrocode}
+%
+% 定义键值类。
+%    \begin{macrocode}
+\keys_define:nn { sjtu / option }
+  {
+    degree    .choice: ,
+    degree    .value_required:n = true ,
+    degree / bachelor .code:n =
+      { \cs_gset_eq:NN \g_@@_degree_flag  \c_zero } ,
+    degree / master   .code:n =
+      { \cs_gset_eq:NN \g_@@_degree_flag  \c_one  } ,
+    degree / doctor   .code:n =
+      { \cs_gset_eq:NN \g_@@_degree_flag  \c_two  } ,
+    degree    .default:n = { doctor } ,
+    degree    .initial:n = { doctor } ,
+    zihao     .choice: ,
+    zihao     .value_required:n = true ,
+    zihao /     5 .code:n =
+      {
+        \tl_set:Nn     \g_@@_font_size_tl {     5 }
+        \cs_gset_eq:NN \g_@@_font_size_flag \c_zero
+      } ,
+    zihao /    -4 .code:n =
+      {
+        \tl_set:Nn     \g_@@_font_size_tl {    -4 }
+        \cs_gset_eq:NN \g_@@_font_size_flag \c_one
+      } ,
+    zihao / false .code:n =
+      {
+        \tl_set:Nn     \g_@@_font_size_tl { false }
+        \cs_gset_eq:NN \g_@@_font_size_flag \c_two
+      } ,
+    zihao     .default:n = { 5 } ,
+    zihao     .initial:n = { 5 } ,
+    oneside   .value_forbidden:n = true,
+    twoside   .value_forbidden:n = true,
+    oneside   .code:n =
+      {
+        \clist_gput_right:Nn \g_@@_to_ctexbook_clist {   oneside }
+        \bool_set_false:N    \g_@@_twoside_bool
+      },
+    twoside   .code:n =
+      {
+        \clist_gput_right:Nn \g_@@_to_ctexbook_clist {   twoside }
+        \bool_set_true:N     \g_@@_twoside_bool
+      },
+    review  .value_forbidden:n = true ,
+    review  .code:n =
+      { \bool_set_true:N  \g_@@_review_bool } ,
+    english .value_forbidden:n = true ,
+    english .code:n =
+      { \bool_set_true:N  \g_@@_english_bool } ,
+%    \end{macrocode}
+%
+% 未知选项传递给 ctexbook。
+%    \begin{macrocode}
+    unknown .code:n = 
+      { \clist_gput_right:No \g_@@_to_ctexbook_clist { \CurrentOption } }
+  }
+%    \end{macrocode}
+%
+% 将文档类选项传给。
+%    \begin{macrocode}
+\ProcessKeysOptions { sjtu / option }
+%    \end{macrocode}
+%
+% 语言风格设置。
+%    \begin{macrocode}
+\bool_if:NTF \g_@@_english_bool
+  { \tl_const:Nn \c_@@_scheme_tl { plain   } }
+  { \tl_const:Nn \c_@@_scheme_tl { chinese } }
+\file_input:n { sjtuthesis.def }
+%    \end{macrocode}
+%
+% 将选项传入 ctexbook 文档类。
+%    \begin{macrocode}
+\PassOptionsToClass
+  {
+    UTF8,
+    zihao      = \g_@@_font_size_tl,
+    scheme     = \c_@@_scheme_tl,
+    linespread = \c_@@_line_spread_fp,
+    \g_@@_to_ctexbook_clist
+  }
+  { ctexbook }
+%    \end{macrocode}
+%
+% 传入各宏包选项。
+%    \begin{macrocode}
+\clist_map_inline:nn
+  {
+    { no-math                } { fontspec  },
+    { perpage, bottom        } { footmisc  },
+    { inline                 } { enumitem  },
+    { titles                 } { tocloft   },
+    { list = off             } { bicaption },
+    { backend = biber, 
+      style   = gb7714-2015, 
+      seconds = true         } { biblatex  }
+  }
+  { \PassOptionsToPackage #1 }
+%    \end{macrocode}
+%
+% 载入 ctexbook 文档类。
+%    \begin{macrocode}
+\LoadClass { ctexbook }
+%    \end{macrocode}
+%
+% 载入各宏包。
+%    \begin{macrocode}
+\RequirePackage
+  { 
+    geometry,
+    fancyhdr,
+    pageslts,
+    ulem,
+    tocloft,
+    enumitem,
+    anyfontsize,
+    footmisc,
+    environ,
+    graphicx,
+    longtable,
+    biblatex,
+    algorithm,
+    algpseudocode
+  }
+%    \end{macrocode}
+%
+% 载入参数配置文件。
+%    \begin{macrocode}
+\bool_if:NTF \g_@@_english_bool
+  { \file_input:n { sjtuthesis-en.def } }
+  { \file_input:n { sjtuthesis-zh.def } }
+%    \end{macrocode}
+%
+% 区分学位。
+%    \begin{macrocode}
+\if_case:w \g_@@_degree_flag
+  \tl_gset:NV \g_@@_degree_tl    \c_@@_degree_bachelor_tl
+  \tl_gset:NV \g_@@_degree_en_tl \c_@@_degree_bachelor_en_tl
+\or:
+  \tl_gset:NV \g_@@_degree_tl    \c_@@_degree_master_tl
+  \tl_gset:NV \g_@@_degree_en_tl \c_@@_degree_master_en_tl
+\else:
+  \tl_gset:NV \g_@@_degree_tl    \c_@@_degree_doctor_tl
+  \tl_gset:NV \g_@@_degree_en_tl \c_@@_degree_doctor_en_tl
+\fi:
+%    \end{macrocode}
+%
+% 设置副标题。
+%    \begin{macrocode}
+\tl_const:Nn \c_@@_info_subtitle_tl
+  {
+    \c_@@_name_tl
+    \g_@@_degree_tl
+    \c_@@_thesis_tl
+  }
+\tl_const:Nn \c_@@_info_subtitle_en_tl
+  { 
+    Thesis~ Submitted~ to~ \c_@@_name_en_tl \\
+    for~ the~ Degree~ of~ \g_@@_degree_en_tl
+  }
+%    \end{macrocode}
+%
+% 打补丁。
+%    \begin{macrocode}
+\ctex_patch_cmd:Nnn \cleardoublepage
+  { \newpage }
+  { \thispagestyle { empty } \newpage }
+\ctex_patch_cmd:Nnn \chapter
+  { \thispagestyle { \CTEX@chapter@pagestyle } }
+  { }
+\ctex_patch_cmd:Nnn \@chapter
+  { \if@twocolumn }
+  {
+    \addtocontents { loa } { \protect \addvspace { 10 \p@ } } %
+    \if@twocolumn
+  }
+\ctex_patch_cmd:Nnn \tableofcontents
+  { \chapter }
+  {
+    \cleardoublepage
+    \pdfbookmark [ 0 ] { \contentsname } { toc }
+    \chapter
+  }
+%    \end{macrocode}
+%
+% 打补丁。
+%    \begin{macrocode}
+\int_compare:nNnT \g_@@_font_size_flag = \c_one
+  { \RenewDocumentCommand \large { } { \zihao { 4 } } }
+%    \end{macrocode}
+%
+% 打补丁。
+%    \begin{macrocode}
+\RenewDocumentCommand \frontmatter { }
+  {
+    \cleardoublepage
+    \@mainmatterfalse
+    \int_compare:nNnTF \g_@@_degree_flag = \c_zero
+      { \pagestyle { front } }
+      { \pagestyle { main  } }
+    \pagenumbering { Roman }
+  }
+\RenewDocumentCommand \mainmatter { }
+  {
+    \cleardoublepage
+    \@mainmattertrue
+    \pagestyle { main }
+    \pagenumbering { arabic }
+  }
+%    \end{macrocode}
+%
+% 设置章（chapter）、节（section）与小节（sub-section）标题样式。
+%    \begin{macrocode}
+\keys_set:nn { ctex }
+  {
+    % contentsname    = \c_@@_def_name_toc_tl,
+    autoindent      = true,
+    today           = old,
+    chapter =
+      {
+        format      = \zihao{3}\bfseries\heiti\centering,
+        nameformat  = {},
+        titleformat = {},
+        aftername   = \quad,
+        afterindent = true,
+        fixskip     = true
+      },
+    section =
+      {
+        format      = \zihao{4}\bfseries\heiti,
+        afterindent = true,
+        fixskip     = true
+      },
+    subsection =
+      {
+        format      = \zihao{-4}\bfseries\heiti,
+        afterindent = true,
+        fixskip     = true
+      },
+    subsubsection =
+      {
+        format      = \normalfont\normalsize,
+        afterindent = true,
+        fixskip     = true
+      },
+    paragraph/afterindent    = true,
+    subparagraph/afterindent = true
+  }
+%    \end{macrocode}
+%
+% 目录格式。
+%    \begin{macrocode}
+% 
+\cs_set_eq:NN \cftchapfont \_@@_def_chapter_toc_format:
+%    \end{macrocode}
+%
+% 设置版面。
+%    \begin{macrocode}
+\geometry
+  {
+    paper      = a4paper,
+    top        = 3.5cm,
+    bottom     = 4.0cm,
+    left       = 3.3cm,
+    right      = 2.8cm,
+    headheight = 2.5cm,
+  }
+%    \end{macrocode}
+%
+% 超链接。
+%    \begin{macrocode}
+\NewDocumentCommand \hypersetup { m }
+  { \@@_hyperref_setup:n {#1} }
+\cs_new_protected:Npn \@@_hyperref_setup:n #1
+  { \clist_gput_right:Nn \g_@@_to_hyperref_clist {#1} }
+\ctex_at_end_preamble:n
+  {
+    \RequirePackage { hyperref }
+    \hypersetup
+      {
+        hidelinks,
+        bookmarksnumbered = true,
+        pdftitle    = \l_@@_info_title_tl,
+        pdfauthor   = \l_@@_info_author_tl,
+        pdfkeywords = \l_@@_info_keywords_clist,
+        pdfcreator  = \c_@@_def_name_pdf_creator_tl
+      }
+  }
+%    \end{macrocode}
+%
+% 设置页码与页眉页脚格式。
+% 清空文首页面格式，使用大写拉丁字母编号。
+%    \begin{macrocode}
+\AtBeginDocument
+  { 
+    \pagenumbering { Alph  } 
+    \pagestyle     { empty }
+  }
+%    \end{macrocode}
+%
+% 内部函数。
+%    \begin{macrocode}
+\cs_new:Npn \_@@_fixed_width_box:nnn #1#2#3
+  { \parbox [ b ] {#1} { #3 #2 } }
+\cs_generate_variant:Nn \_@@_fixed_width_box:nnn { Vnn }
+\cs_new:Nn  \_@@_right_head:n
+  {
+    \small \heiti 
+    \_@@_fixed_width_box:Vnn \c_@@_def_parbox_max_width_tl
+      { 
+        \bool_if:NTF \g_@@_english_bool
+          { \_@@_uppercase:n { \l_@@_info_title_en_tl } }
+          { \l_@@_info_title_tl }
+      }
+      { \raggedleft }
+  }
+%    \end{macrocode}
+%
+% 页眉页脚格式。
+%    \begin{macrocode}
+\int_compare:nNnTF \g_@@_degree_flag = \c_zero
+  {
+    \fancypagestyle { front }
+      {
+        \fancyhead { }
+        \fancyhead [ L ] { \includegraphics { sjtubanner } }
+        \fancyhead [ R ] { \_@@_right_head:n }
+        \fancyfoot [ C ] 
+          {
+            \_@@_bachelor_foot:nn
+              { \thepage }
+              { \lastpageref { pagesLTS.Roman } }
+          }
+      }
+    \fancypagestyle { main }
+      {
+        \fancyhead { }
+        \fancyhead [ L ] { \includegraphics { sjtubanner } }
+        \fancyhead [ R ] { \_@@_right_head:n }
+        \fancyfoot [ C ] 
+          {
+            \_@@_bachelor_foot:nn
+              { \thepage }
+              { \lastpageref { pagesLTS.arabic } }
+          }
+      }
+    \fancypagestyle { bigabst }
+      {
+        \fancyhead { }
+        \fancyhead [ L ] { \includegraphics { sjtubanner } }
+        \fancyhead [ R ] { \_@@_right_head:n }
+        \fancyfoot [ C ] 
+          {
+            \_@@_bachelor_foot:nn
+              { \theCurrentPageLocal }
+              { \lastpageref { pagesLTS.roman.local } }
+          }
+      }
+  }
+%    \end{macrocode}
+%
+% 研究生页眉页脚格式。
+%    \begin{macrocode}
+  {
+    \fancypagestyle { main  }
+      {
+        \fancyhead { }
+        \bool_if:NTF \g_@@_twoside_bool
+          {
+            \fancyhead [ LO, RE ] { \small \c_@@_info_subtitle_tl }
+            \fancyhead [ LE, RO ] { \small \nouppercase { \leftmark } }
+          }
+          {
+            \fancyhead [ L ] { \small \c_@@_info_subtitle_tl }
+            \fancyhead [ R ] { \small \nouppercase { \leftmark } }
+          }
+          \fancyfoot [ C ] { \small ---~ { \thepage }~ --- }
+      }
+    \fancypagestyle { bigabst  }
+      {
+        \fancyhead { }
+        \bool_if:NTF \g_@@_twoside_bool
+          {
+            \fancyhead [ LO, RE ] { \small \c_@@_info_subtitle_tl }
+            \fancyhead [ LE, RO ] { \small \nouppercase { \leftmark } }
+          }
+          {
+            \fancyhead [ L ] { \small \c_@@_info_subtitle_tl }
+            \fancyhead [ R ] { \small \nouppercase { \leftmark } }
+          }
+          \fancyfoot [ C ] { \small ---~ { \theCurrentPageLocal }~ --- }
+      }
+  }
+%    \end{macrocode}
+%
+% 页眉页脚格式。
+%    \begin{macrocode}
+\cs_new:Npn \@@_front_matter_header:n #1
+  { \markboth {#1} {#1} }
+%    \end{macrocode}
+%
+% 数学环境。
+%    \begin{macrocode}
+\RequirePackage { mathtools }
+\cs_set:Npn \theequation  { \thechapter -- \arabic{equation}  }
+%    \end{macrocode}
+%
+% 题注。
+%    \begin{macrocode}
+\RequirePackage { caption, bicaption, subcaption }
+\DeclareCaptionFont   { kaishu    } { \kaishu }
+\DeclareCaptionOption { bi-second } []
+  {
+    \cs_set_eq:NN \figurename \_@@_bicap_fig:
+    \cs_set_eq:NN \tablename  \_@@_bicap_tab:
+  }
+\captionsetup
+  {
+    format        = plain,
+    labelformat   = simple,
+    labelsep      = space,
+    justification = centering,
+    font          = { small, kaishu }
+  }
+\captionsetup [ bi-second ] { bi-second           }
+\captionsetup [ sub       ] { font = footnotesize }
+\cs_set:Npn \thefigure    { \thechapter -- \arabic{figure}    }
+\cs_set:Npn \p@subfigure  { \thefigure                        }
+\cs_set:Npn \thetable     { \thechapter -- \arabic{table}     }
+%    \end{macrocode}
+%
+% 算法环境。
+%    \begin{macrocode}
+\floatname { algorithm } { \c_@@_def_name_algorithm_tl }
+\@addtoreset { algorithm } { chapter }
+\cs_set:Npn \thealgorithm { \thechapter -- \arabic{algorithm} }
+%    \end{macrocode}
+%
+% hyperref。
+%    \begin{macrocode}
+\ctex_at_end_package:nn { hyperref }
+  {
+    \pdfstringdefDisableCommands
+      {
+        \cs_set_eq:NN \quad    \c_space_tl
+        \cs_set_eq:NN \qquad   \c_space_tl
+      }
+  }
+%    \end{macrocode}
+%
+% 标题页信息。
+%    \begin{macrocode}
+\tl_new:N    \l_@@_info_title_tl
+\tl_new:N    \l_@@_info_date_tl
+\tl_new:N    \l_@@_info_author_tl
+\tl_new:N    \l_@@_info_supervisor_tl
+\tl_new:N    \l_@@_info_co_supervisor_tl
+\tl_new:N    \l_@@_info_department_tl
+\tl_new:N    \l_@@_info_major_tl
+\tl_new:N    \l_@@_info_student_id_tl
+\clist_new:N \l_@@_info_keywords_clist
+\tl_new:N    \l_@@_info_title_en_tl
+\tl_new:N    \l_@@_info_date_en_tl
+\tl_new:N    \l_@@_info_author_en_tl
+\tl_new:N    \l_@@_info_supervisor_en_tl
+\tl_new:N    \l_@@_info_co_supervisor_en_tl
+\tl_new:N    \l_@@_info_department_en_tl
+\tl_new:N    \l_@@_info_major_en_tl
+\clist_new:N \l_@@_info_keywords_en_clist
+\keys_define:nn { sjtu / info }
+  {
+    title       .tl_set:N    = \l_@@_info_title_tl,
+    title*      .tl_set:N    = \l_@@_info_title_en_tl,
+    date        .tl_set:N    = \l_@@_info_date_tl,
+    date*       .tl_set:N    = \l_@@_info_date_en_tl,
+    department  .tl_set:N    = \l_@@_info_department_tl,
+    department* .tl_set:N    = \l_@@_info_department_en_tl,
+    major       .tl_set:N    = \l_@@_info_major_tl,
+    major*      .tl_set:N    = \l_@@_info_major_en_tl,
+    keywords    .clist_set:N = \l_@@_info_keywords_clist,
+    keywords*   .clist_set:N = \l_@@_info_keywords_en_clist,
+  }
+\bool_if:NTF \g_@@_review_bool
+  {
+    \keys_define:nn { sjtu / info }
+      {
+        author        .code:n = \prg_do_nothing:,
+        author*       .code:n = \prg_do_nothing:,
+        studentid     .code:n = \prg_do_nothing:,
+        supervisor    .code:n = \prg_do_nothing:,
+        supervisor*   .code:n = \prg_do_nothing:,
+        cosupervisor  .code:n = \prg_do_nothing:,
+        cosupervisor* .code:n = \prg_do_nothing:
+      }
+  }
+  {
+    \keys_define:nn { sjtu / info }
+      {
+        author        .tl_set:N = \l_@@_info_author_tl,
+        author*       .tl_set:N = \l_@@_info_author_en_tl,
+        studentid     .tl_set:N = \l_@@_info_student_id_tl,
+        supervisor    .tl_set:N = \l_@@_info_supervisor_tl,
+        supervisor*   .tl_set:N = \l_@@_info_supervisor_en_tl,
+        cosupervisor  .tl_set:N = \l_@@_info_co_supervisor_tl,
+        cosupervisor* .tl_set:N = \l_@@_info_co_supervisor_en_tl
+      }
+  }
+%    \end{macrocode}
+%
+% 摘要。
+%    \begin{macrocode}
+\NewDocumentEnvironment { abstract } { }
+  {
+    \cleardoublepage
+    \pdfbookmark [0] { \c_@@_def_name_abstract_tl } { abstract }
+    \chapter* 
+      { 
+        \l_@@_info_title_tl
+        \skip_vertical:n \c_@@_def_v_sep_iv_tl
+        \c_@@_def_name_abstract_tl
+      }
+    \@@_front_matter_header:n { \c_@@_def_name_abstract_tl }
+  }
+  {
+    \par \mode_leave_vertical: \par
+    \noindent \hangindent = 4 em  \hangafter = 1
+    \group_begin:
+      \large \heiti \c_@@_def_name_keywords_tl
+    \group_end:
+    \clist_use:Nn \l_@@_info_keywords_clist { ， }
+  }
+\cs_new:Npn \_@@_uppercase:n #1 
+  { \exp_after:wN \uppercase \exp_after:wN {#1} }
+\NewDocumentEnvironment { abstract* } { }
+  {
+    \cleardoublepage
+    \pdfbookmark [0] { \c_@@_def_name_abstract_en_tl } { abstract_en }
+    \chapter* 
+      { 
+        \_@@_uppercase:n \l_@@_info_title_en_tl
+        \skip_vertical:n \c_@@_def_v_sep_iv_tl
+        \_@@_uppercase:n \c_@@_def_name_abstract_en_tl
+      }
+    \@@_front_matter_header:n { \c_@@_def_name_abstract_en_tl }
+  }
+  {
+    \par \mode_leave_vertical: \par
+    \noindent \hangindent = 4 em \hangafter = 1
+    \group_begin:
+      \large \bfseries \c_@@_def_name_keywords_en_tl
+    \group_end:
+    \clist_use:Nn \l_@@_info_keywords_en_clist { ,~  }
+  }
+%    \end{macrocode}
+%
+% 大摘要。
+%    \begin{macrocode}
+\NewDocumentEnvironment { bigabstract } { }
+  {
+    \cleardoublepage
+    \pagestyle { bigabst }
+    \pagenumbering { roman }
+    \chapter*
+      {
+        \_@@_uppercase:n { \l_@@_info_title_en_tl }
+      }
+    \@@_front_matter_header:n \c_@@_def_name_big_abstract_tl
+  }
+  { 
+    \cleardoublepage
+    \pagestyle { main }
+    \pagenumbering { arabic }
+  }
+\bool_if:NTF \g_@@_review_bool
+  {
+    \NewEnviron { acknowledgement } { }
+  }
+  {
+    \NewDocumentEnvironment { acknowledgement } { }
+      {
+        \chapter { \c_@@_def_name_ack_tl }
+      } { }
+  }
+\NewDocumentCommand \encrypt { m G{$\times \times \times$} }
+  { \bool_if:NTF \g_@@_review_bool {#2} {#1} }
+%    \end{macrocode}
+%
+% 标题页。
+%    \begin{macrocode}
+\cs_new:Npn \_@@_center_box:nnn #1#2#3
+  {
+    \mode_leave_vertical:
+    \hbox_to_wd:nn {#1} { #3 { \hfil #2 \hfil } }
+  }
+\cs_new:Npx \_@@_center_box:nn #1#2
+  { \_@@_center_box:nnn {#1} {#2} { } }
+\cs_generate_variant:Nn \_@@_center_box:nnn { VVn }
+\cs_generate_variant:Nn \_@@_center_box:nn  { VV  }
+\cs_new:Npn \_@@_spread_box:nnn #1#2#3
+  {
+    \mode_leave_vertical:
+    \hbox_to_wd:nn {#1}
+      { #3 \tl_map_inline:nn {#2} { \exp_not:n {##1} \hfil } \unskip }
+  }
+\cs_new:Npx \_@@_spread_box:nn #1#2
+  { \_@@_spread_box:nnn {#1} {#2} { } }
+\cs_generate_variant:Nn \_@@_spread_box:nnn { VVn }
+\cs_generate_variant:Nn \_@@_spread_box:nn  { VV  }
+\cs_new:Npn \@@_get_text_width:Nnn #1#2#3
+  {
+    \hbox_set:Nn \l_@@_tmpa_box { #3 #2 }
+    \dim_set:Nn #1 { \box_wd:N \l_@@_tmpa_box }
+  }
+\cs_generate_variant:Nn \@@_get_text_width:Nnn { NVn }
+\cs_new:Npn \@@_get_max_text_width:NNNNn #1#2#3#4#5
+  {
+    \group_begin:
+    \dim_gset:Nn #1 \c_@@_def_cover_info_left_width_tl
+    \dim_gset:Nn #2 \c_@@_def_cover_info_right_width_tl
+    \clist_set_eq:NN \l_@@_tmpa_clist #3
+    \clist_set_eq:NN \l_@@_tmpb_clist #4
+    \bool_until_do:nn
+      { \clist_if_empty_p:N \l_@@_tmpa_clist }
+      {
+        \clist_pop:NN \l_@@_tmpa_clist \l_@@_tmpa_tl
+        \clist_pop:NN \l_@@_tmpb_clist \l_@@_tmpb_tl
+        \tl_if_empty:NF \l_@@_tmpb_tl
+          {
+            \@@_get_text_width:NVn \l_@@_tmpa_dim \l_@@_tmpa_tl #5
+            \@@_get_text_width:NVn \l_@@_tmpb_dim \l_@@_tmpb_tl #5
+            \dim_gset:Nn #1 { \dim_max:nn {#1} { \l_@@_tmpa_dim } }
+            \dim_gset:Nn #2 { \dim_max:nn {#2} { \l_@@_tmpb_dim } }
+          }
+      }
+    \dim_gset:Nn #1
+      { \dim_max:nn {#1} { \c_@@_def_cover_info_left_width_tl  } }
+    \dim_gset:Nn #2
+      { \dim_max:nn {#2} { \c_@@_def_cover_info_right_width_tl } }
+    \group_end:
+  }
+\dim_new:N  \l_@@_cover_info_left_width_dim
+\dim_new:N  \l_@@_cover_info_right_width_dim
+\cs_new:Npn \_@@_cover_info:nnnn #1#2#3#4
+  { 
+    \int_compare:nNnTF \g_@@_degree_flag = \c_zero
+      {
+        \clist_set:Nx \l_@@_tmpa_clist
+          {
+            { \c_@@_def_name_author_b_tl        },
+            { \c_@@_def_name_student_id_b_tl    },
+            { \c_@@_def_name_supervisor_b_tl    },
+            { \c_@@_def_name_co_supervisor_b_tl },
+            { \c_@@_def_name_major_b_tl         },
+            { \c_@@_def_name_department_b_tl    }
+          }
+      }
+      {
+        \clist_set:Nx \l_@@_tmpa_clist
+          {
+            { \c_@@_def_name_author_a_tl        },
+            { \c_@@_def_name_student_id_a_tl    },
+            { \c_@@_def_name_supervisor_a_tl    },
+            { \c_@@_def_name_co_supervisor_a_tl },
+            { \c_@@_def_name_major_a_tl         },
+            { \c_@@_def_name_department_a_tl    }
+          }
+      }
+    \clist_set:Nx \l_@@_tmpb_clist
+      {
+        { \l_@@_info_author_tl            },
+        { \l_@@_info_student_id_tl        },
+        { \l_@@_info_supervisor_tl        },
+        { \l_@@_info_co_supervisor_tl     },
+        { \l_@@_info_major_tl             },
+        { \l_@@_info_department_tl        }
+      }
+    \begin{center}
+      \begin{minipage} [ c ] { \textwidth }
+        \centering \_@@_font_size_normal:
+        \@@_get_max_text_width:NNNNn
+          \l_@@_cover_info_left_width_dim
+          \l_@@_cover_info_right_width_dim
+          \l_@@_tmpa_clist
+          \l_@@_tmpb_clist
+          #3
+        \bool_until_do:nn
+          { \clist_if_empty_p:N \l_@@_tmpa_clist }
+          {
+            \clist_pop:NN \l_@@_tmpa_clist \l_@@_tmpa_tl
+            \clist_pop:NN \l_@@_tmpb_clist \l_@@_tmpb_tl
+            \tl_if_empty:NF \l_@@_tmpb_tl
+              {
+                #3
+                {
+                  #1
+                  \_@@_spread_box:VV 
+                    \l_@@_cover_info_left_width_dim  \l_@@_tmpa_tl
+                  \c_@@_fullwidth_colon_tl 
+                }
+                {
+                  #2
+                  \_@@_center_box:VVn
+                    \l_@@_cover_info_right_width_dim \l_@@_tmpb_tl
+                    { \uline }
+                } 
+                \skip_vertical:n #4
+              }
+          }
+      \end{minipage}
+    \end{center}
+  }
+\NewDocumentCommand \makecoveri { }
+  {
+    \group_begin:
+      \cleardoublepage
+      \null 
+      \begin{center}
+      \_@@_font_kaishu:
+      \skip_vertical:n \c_@@_def_v_sep_iv_tl
+      \includegraphics { sjtulogo.pdf }
+      \skip_vertical:n \c_@@_def_v_sep_v_tl
+      \group_begin:
+        \@@_cover_subtitle_format_b:  
+        \g_@@_degree_tl \c_@@_thesis_tl
+      \group_end:
+      \skip_vertical:n \c_@@_def_v_sep_iv_tl
+      \group_begin:
+        \_@@_cover_subtitle_format_a:
+        \MakeUppercase { \c_@@_thesis_en_tl \g_@@_degree_en_tl }
+      \group_end:
+      \skip_vertical:n \c_@@_def_v_sep_iv_tl
+      \includegraphics { sjtubadge.pdf }
+      \skip_vertical:n \c_@@_def_v_sep_ii_tl
+      \group_begin:
+        \_@@_cover_subtitle_format_a:
+        \tl_if_empty:NF \l_@@_info_title_tl
+          {
+            \c_@@_title_tl \c_@@_fullwidth_colon_tl
+            \uline { \l_@@_info_title_tl }
+          }
+      \group_end:
+      \skip_vertical:n \c_@@_def_v_sep_i_tl
+      \_@@_cover_normal_format:
+      \_@@_cover_info:nnnn 
+        \_@@_font_kaishu:
+        \_@@_font_kaishu:
+        \_@@_font_size_large:
+        \c_@@_def_v_sep_iii_tl
+    \end{center}
+    \group_end:
+  }
+\NewDocumentCommand \makecoverii { }
+  {
+    \group_begin:
+      \cleardoublepage
+      \null
+      \begin{center}
+        \skip_vertical:n \c_@@_def_v_sep_iv_tl
+        \group_begin:
+          \_@@_cover_subtitle_format_a:
+          \c_@@_info_subtitle_tl
+        \group_end:
+        \skip_vertical:n \c_@@_def_v_sep_ii_tl
+        \group_begin:
+          \_@@_cover_title_format:
+          \l_@@_info_title_tl
+        \group_end:
+        \skip_vertical:n \c_@@_def_v_sep_ii_tl
+        \_@@_cover_normal_format:
+        \_@@_cover_info:nnnn
+          \_@@_font_heiti:
+          \_@@_font_songti:
+          \_@@_font_size_normal:
+          \c_@@_def_v_sep_vi_tl
+        \skip_vertical:n \c_@@_def_v_sep_i_tl
+        \_@@_cover_normal_format:
+        \c_@@_name_tl
+        \skip_vertical:n \c_@@_def_v_sep_iii_tl
+        \l_@@_info_date_tl 
+      \end{center}
+    \group_end:
+  }
+\NewDocumentCommand \makecoveriii { }
+  {
+    \group_begin:
+      \cleardoublepage
+      \null
+      \begin{center}
+        \skip_vertical:n \c_@@_def_v_sep_iv_tl
+        \group_begin:
+          \_@@_cover_subtitle_format_a:
+          \c_@@_info_subtitle_en_tl
+        \group_end:
+        \skip_vertical:n \c_@@_def_v_sep_ii_tl
+        \group_begin:
+          \_@@_cover_title_format:
+          \l_@@_info_title_en_tl
+        \group_end:
+        \skip_vertical:n \c_@@_def_v_sep_ii_tl
+        \_@@_cover_normal_format:
+        \tl_if_empty:NF \l_@@_info_author_en_tl 
+          { \l_@@_info_author_en_tl  }
+        \skip_vertical:n \c_@@_def_v_sep_vi_tl
+        \tl_if_empty:NF \l_@@_info_major_en_tl
+          { (~ \l_@@_info_major_en_tl\/~ ) }
+        \skip_vertical:n \c_@@_def_v_sep_i_tl
+        \tl_if_empty:NF \l_@@_info_supervisor_en_tl
+          {
+            \c_@@_def_name_supervisor_en_tl
+            \skip_vertical:n \c_@@_def_v_sep_iii_tl
+            \l_@@_info_supervisor_en_tl
+          }
+        \skip_vertical:n \c_@@_def_v_sep_vi_tl
+        \tl_if_empty:NF \l_@@_info_co_supervisor_en_tl
+          {
+            \c_@@_def_name_co_supervisor_en_tl
+            \skip_vertical:n \c_@@_def_v_sep_iii_tl
+            \l_@@_info_co_supervisor_en_tl
+          }
+        \skip_vertical:n \c_@@_def_v_sep_i_tl
+        \l_@@_info_department_en_tl
+        \skip_vertical:n \c_@@_def_v_sep_vi_tl
+        \c_@@_name_en_tl
+        \skip_vertical:n \c_@@_def_v_sep_iii_tl
+        \l_@@_info_date_en_tl
+      \end{center}
+    \group_end:
+  }
+%    \end{macrocode}
+%
+% 授权书。
+%    \begin{macrocode}
+\NewDocumentCommand \makedeclareoriginal { }
+  {
+    \chapter* { \c_@@_def_name_originality_decl_tl }
+    \group_begin:
+      \_@@_font_size_normal:
+      \c_@@_def_originality_decl_text_tl
+      \skip_vertical:n \c_@@_def_v_sep_i_tl
+      \noindent
+      \begin{minipage} { \textwidth }
+        \hfill
+        \c_@@_def_author_sign_tl
+      \end{minipage}
+      \skip_vertical:n \c_@@_def_v_sep_i_tl
+    \group_end:
+  }
+\NewDocumentCommand \makedeclareauthorization { }
+  {
+    \chapter* { \c_@@_def_name_authorization_decl_tl }
+    \group_begin:
+      \_@@_font_size_normal:
+      \c_@@_def_authorization_decl_text_tl
+      \skip_vertical:n \c_@@_def_v_sep_vi_tl
+      \c_@@_def_authorization_cont_text_tl
+      \skip_vertical:n \c_@@_def_v_sep_i_tl
+      \noindent
+      \begin{minipage} { \textwidth }
+        \c_@@_def_author_sign_tl
+        \hfill
+        \c_@@_def_supervisor_sign_tl
+      \end{minipage}
+      \skip_vertical:n \c_@@_def_v_sep_i_tl
+    \group_end:
+  }
+%    \end{macrocode}
+%
+% 符号表。
+%    \begin{macrocode}
+\NewDocumentEnvironment { notation }
+  { G { \c_@@_def_notation_arg_tl } }
+  {
+    \chapter* { \c_@@_def_name_notation_tl }
+    \@@_front_matter_header:n { \c_@@_def_name_notation_tl }
+    \group_begin:
+      \dim_set_eq:NN \LTpre  \c_zero_dim
+      \dim_set_eq:NN \LTpost \c_zero_dim
+      \begin{longtable} {#1}
+  }
+  {
+      \end{longtable}
+    \group_end:
+  }
+%    \end{macrocode}
+%
+% 使用enumitem宏包配制列表环境
+% 紧凑间距
+%    \begin{macrocode}
+\setlist { nosep }
+\setlist*{ leftmargin = * }
+\setlist [ 1 ] { labelindent = \parindent }
+\newlist { works } { enumerate } { 1 }
+\setlist [ works ] 
+  { 
+    label      = [ \arabic* ] ,
+    leftmargin =  2 em ,
+    labelsep   = .9 em ,
+    itemsep    = .6 em
+  }
+\NewDocumentEnvironment { publications } { }
+  {
+    \chapter { \c_@@_def_name_publications_tl }
+    \begin { works }
+  }
+  { \end   { works } }
+\NewDocumentEnvironment { patents      } { }
+  {
+    \chapter { \c_@@_def_name_patents_tl }
+    \begin { works }
+  }
+  { \end   { works } }
+\NewDocumentEnvironment { projects     } { }
+  {
+    \chapter { \c_@@_def_name_projects_tl }
+    \begin { works }
+  }
+  { \end   { works } }
+\keys_define:nn { sjtu }
+  {
+    info  .meta:nn = { sjtu / info  } {#1}
+  }
+\NewDocumentCommand \sjtusetup { m }
+  { \keys_set:nn { sjtu } {#1} }
+%</class>
+%    \end{macrocode}
+%
+%    \begin{macrocode}
+%<*def>
+\tl_const:Nn \c_@@_name_tl    
+  { 上海交通大学                     }
+\tl_const:Nn \c_@@_name_en_tl 
+  { Shanghai~ Jiao~ Tong~ University }
+\tl_const:Nn \c_@@_degree_bachelor_tl    { 学士        }
+\tl_const:Nn \c_@@_degree_bachelor_en_tl { Bachelor    }
+\tl_const:Nn \c_@@_degree_master_tl      { 硕士        }
+\tl_const:Nn \c_@@_degree_master_en_tl   { Master      }
+\tl_const:Nn \c_@@_degree_doctor_tl      { 博士        }
+\tl_const:Nn \c_@@_degree_doctor_en_tl   { doctor      }
+\tl_const:Nn \c_@@_thesis_tl             { 学位论文    }
+\tl_const:Nn \c_@@_thesis_en_tl          { Thesis~ of~ }
+\tl_const:Nn \c_@@_title_tl              { 论文题目    }
+\fp_const:Nn \c_@@_line_spread_fp { 1.3 }
+\tl_const:Nn \c_@@_def_notation_arg_tl { l p { 7.5 cm } }
+\cs_new:Npn \@@_def_chapter_toc_format:
+  { \heiti \bfseries }
+\@@_def_name:nn { author_a         } { 姓名          }
+\@@_def_name:nn { author_b         } { 学生姓名      }
+\@@_def_name:nn { author_en        } { Author        }
+\@@_def_name:nn { student_id_a     } { 学号          }
+\@@_def_name:nn { student_id_b     } { 学生学号      }
+\@@_def_name:nn { student_id_en    } { Student~ ID   }
+\@@_def_name:nn { supervisor_a     } { 导师          }
+\@@_def_name:nn { supervisor_b     } { 指导教师      }
+\@@_def_name:nn { supervisor_en    } { Supervisor    }
+\@@_def_name:nn { co_supervisor_a  } { 副导师        }
+\@@_def_name:nn { co_supervisor_b  } { 副指导教师    }
+\@@_def_name:nn { co_supervisor_en } { Co-Supervisor }
+\@@_def_name:nn { major_a          } { 学科          }
+\@@_def_name:nn { major_b          } { 专业          }
+\@@_def_name:nn { major_en         } { Major         }
+\@@_def_name:nn { department_a     } { 所在单位      }
+\@@_def_name:nn { department_b     } { 院系          }
+\@@_def_name:nn { department_en    } { Department    }
+\@@_def_name:nn { abstract         } { 摘 \quad 要   }
+\@@_def_name:nn { abstract_en      } { Abstract      }
+\@@_def_name:nn { keywords         } { 关键词：      }
+\@@_def_name:nn { keywords_en      } { KEY~ WORDS:~  }
+\@@_def_name:nn { big_abstract     } { Big~ Abstract }
+\@@_def_name:nn { pdf_creator      }
+  { LaTeX~ with~ sjtuthesis~ class }
+%</def>
+%<*def-zh>
+\keys_define:nn { ctex }
+  {
+    listalgorithmname .tl_set:N = \listalgorithmname
+  }
+\keys_set_known:nn { ctex }
+  {
+    contentsname      = 目 \quad 录 ,
+    listfigurename    = 插 \quad 图 ,
+    listtablename     = 表 \quad 格 ,
+    listalgorithmname = 算 \quad 法
+  }
+%</def-zh>
+%<def-zh>\@@_def_name:nn { notation     }
+%<def-zh>  { 符号对照表                 }
+%<def-en>\@@_def_name:nn { notation     }
+%<def-en>  { List~ of~ Symbols          }
+%<def-zh>\@@_def_name:nn { algorithm    }
+%<def-zh>  { 算法                       }
+%<def-en>\@@_def_name:nn { algorithm    }
+%<def-en>  { Algorithm                  }
+%<def-zh>\@@_def_name:nn { ack          }
+%<def-zh>  { 致 \quad 谢                }
+%<def-en>\@@_def_name:nn { ack          }
+%<def-en>  { Acknowledgement            }
+%<def-zh>\@@_def_name:nn { publications }
+%<def-zh>  { 攻读学位期间发表的学术论文 }
+%<def-en>\@@_def_name:nn { publications }
+%<def-en>  { Publications               }
+%<def-zh>\@@_def_name:nn { patents      }
+%<def-zh>  { 攻读学位期间申请的专利     }
+%<def-en>\@@_def_name:nn { patents      }
+%<def-en>  { Patents                    }
+%<def-zh>\@@_def_name:nn { projects     }
+%<def-zh>  { 攻读学位期间参与的项目     }
+%<def-en>\@@_def_name:nn { projects     }
+%<def-en>  { Projects                   }
+%<*def>
+\tl_const:Nn \c_@@_fullwidth_colon_tl { ： }
+\cs_new:Npn \@@_font_songti: { \songti }
+\cs_new:Npn \@@_font_heiti:  { \heiti  }
+\cs_new:Npn \@@_font_kaishu: { \kaishu }
+\cs_new:Npn \@@_font_size_normal: { \zihao {  4 } }
+\cs_new:Npn \@@_font_size_large:  { \zihao {  3 } }
+\cs_new:Npn \@@_cover_font_size:  { \zihao {  3 } }
+\cs_new:Npn \@@_cover_title_format:
+  { \zihao {  2 } \heiti \bfseries }
+\cs_new:Npn \@@_cover_subtitle_format_a:
+  { \zihao { -2 } }
+\cs_new:Npn \@@_cover_subtitle_format_b:
+  { \fontsize { 32 bp } { \baselineskip } \selectfont }
+\cs_new:Npn \@@_cover_normal_format:
+  { \zihao {  4 } \heiti \scshape  } 
+\tl_const:Nn \c_@@_def_cover_info_left_width_tl    { 0 pt }
+\tl_const:Nn \c_@@_def_cover_info_right_width_tl   { 2 in }
+\tl_const:Nn \c_@@_def_v_sep_i_tl   {  0 pt plus 1.0 fill }
+\tl_const:Nn \c_@@_def_v_sep_ii_tl  {  0 pt plus 2.0 fill }
+\tl_const:Nn \c_@@_def_v_sep_iii_tl {  0 pt }
+\tl_const:Nn \c_@@_def_v_sep_iv_tl  { 15 pt }
+\tl_const:Nn \c_@@_def_v_sep_v_tl   { 30 pt }
+\tl_const:Nn \c_@@_def_v_sep_vi_tl  {  1 ex }
+\tl_const:Nn \c_@@_def_parbox_max_width_tl     { .72 \textwidth }
+\@@_def_name:nn { originality_decl }
+  { \c_@@_name_tl \\ 学位论文原创性声明   }
+\@@_def_name:nn { authorization_decl }
+  { \c_@@_name_tl \\ 学位论文版权使用授权书 }
+\tl_const:Nn \c_@@_def_originality_decl_text_tl
+  {
+    本人郑重声明：所呈交的学位论文，是本人在导师的指导下，独立进行研
+    究工作所取得的成果。除文中已经注明引用的内容外，本论文不包含任何
+    其他个人或集体已经发表或撰写过的作品成果。对本文的研究做出重要贡
+    献的个人和集体，均已在文中以明确方式标明。本人完全意识到本声明的
+    法律结果由本人承担。
+  }
+\tl_const:Nn \c_@@_def_authorization_decl_text_tl
+  {
+    本学位论文作者完全了解学校有关保留、使用学位论文的规定，同意学校
+    保留并向国家有关部门或机构送交论文的复印件和电子版，允许论文被查
+    阅和借阅。本人授权上海交通大学可以将本学位论文的全部或部分内容编
+    入有关数据库进行检索，可以采用影印、缩印或扫描等复制手段保存和汇
+    编本学位论文。
+  }
+\tl_const:Nn \c_@@_def_authorization_cont_text_tl
+  {
+    \par \hspace { 8 em }
+    { \heiti 保 \quad 密 } $\Box$，在 \uline { \hspace { 2 em } }
+    年解密后适用本授权书。\par
+    本学位论文属于：
+    \par \hspace { 8 em }
+    { \heiti 不保密      } $\Box$。
+    \vskip 1ex
+    （请在以上方框内打钩）
+}
+\tl_const:Nn \c_@@_def_author_sign_tl
+  {
+    \parbox { .45 \textwidth }
+      {
+        学位论文作者签名： \vskip 4em
+        日期： \hspace { 3 em } 年
+        \hspace { 2 em } 月 \hspace { 2 em } 日
+      }
+  }
+\tl_const:Nn \c_@@_def_supervisor_sign_tl
+  {
+    \parbox { .45 \textwidth }
+      {
+        指导教师签名： \vskip 4em
+        日期： \hspace { 3 em } 年
+        \hspace { 2 em } 月 \hspace { 2 em } 日
+      }
+  }
+%</def>
+%<*def-en>
+\DefineBibliographyStrings { english }
+  { bibliography = { Bibliography } }
+%</def-en>
+%<*def-zh>
+\cs_new:Npn \@@_bicap_fig:  { Figure    }
+\cs_new:Npn \@@_bicap_tab:  { Table     }
+%</def-zh>
+%<*def-en>
+\cs_new:Npn \@@_bicap_fig:  { 图   }
+\cs_new:Npn \@@_bicap_tab:  { 表   }
+%</def-en>
+%<*def-zh>
+\cs_new:Npn \@@_bachelor_foot:nn #1#2
+  { \small 第~ {#1}~ 页 \enspace 共\/~ {#2}~ 页 }
+%</def-zh>
+%<*def-en>
+\cs_new:Npn \@@_bachelor_foot:nn #1#2
+  { \small ---~ Page~ {#1}~ of~ {#2}~ --- }
+%</def-en>
+%    \end{macrocode}
+%\Finale
